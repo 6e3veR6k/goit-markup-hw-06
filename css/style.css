@@ -696,8 +696,8 @@ img {
   padding-bottom: 60px;
 }
 
-.address-wrapper {
-  margin-right: 70px;
+.footer-block + .footer-block  {
+  margin-left: 70px;
 }
 
 .page-footer .webstudio-logo-link {
@@ -748,10 +748,16 @@ img {
 .email-form {
   display: flex;
   position: relative;
+  padding-top: 36px;
 }
 
 .input-wrapper {
   display: flex;
+}
+
+.input-wrapper.email {
+  display: flex;
+  flex-grow: 2;
 }
 
 .input-wrapper label {
@@ -771,10 +777,6 @@ img {
   color: var(--font-light-color);
 }
 
-.input-wrapper.email {
-  margin-top: 36px;
-}
-
 .email-form .btn {
   display: flex;
   align-items: center;
@@ -785,6 +787,7 @@ img {
   padding-top: 15px;
   padding-bottom: 15px;
   padding-right: 16px;
+  flex-grow: 2;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
