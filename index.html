@@ -58,7 +58,8 @@
       </div>
     </header>
     <!-- Header end -->
-    <div class="backdrop-container is-hidden" data-modal>
+    <!-- <div class="backdrop-container is-hidden" data-modal> -->
+    <div class="backdrop-container" data-modal>
       <div class="card">
         <button class="btn close-btn" type="button" data-modal-close>
           <svg class="close-icon">
@@ -66,7 +67,57 @@
           </svg>
           <span class="visually-hidden">Close</span>
         </button>
-        <p class="form-title">Оставьте свои данные, мы вам перезвоним</p>
+
+        <div class="form-wrapper p-40">
+          <p class="form-title">Оставьте свои данные, мы вам перезвоним</p>
+          <form class="main-user-form">
+            <!-- name input -->
+            <div class="input-wrapper user-name">
+              <label class="input-label small-top" for="user-name">Имя</label>
+              <input type="text" name="user-name" id="user-name" class="input-text user-name" autocomplete="name" />
+            </div>
+
+            <!-- tel input -->
+            <div class="input-wrapper user-tel">
+              <label class="input-label small-top" for="user-tel">Телефон</label>
+              <input type="tel" name="user-tel" id="user-tel" class="input-text user-tel" autocomplete="tel" />
+            </div>
+
+            <!-- email input -->
+            <div class="input-wrapper user-email">
+              <label class="input-label small-top" for="user-email">Почта</label>
+              <input
+                type="email"
+                name="user-email"
+                id="user-email"
+                class="input-text user-email"
+                autocomplete="email"
+              />
+            </div>
+
+            <!-- comment input -->
+            <div class="input-wrapper user-comment">
+              <label class="input-label small-top" for="user-comment">Коментарий</label>
+              <textarea
+                class="input-text user-comment"
+                name="user-comment"
+                id="user-comment"
+                rows="7"
+                placeholder="Введите текст"
+              ></textarea>
+            </div>
+
+            <!-- checkbox input -->
+            <div class="input-wrapper user-aggrement">
+              <input class="user-aggrement" type="checkbox" name="user-aggrement" id="user-aggrement" />
+              <label class="input-label checkbox" for="user-aggrement"
+                >Соглашаюсь с рассылкой и принимаю <a href="#" class="label-link">Условия договора</a></label
+              >
+            </div>
+
+            <button type="submit" class="btn base-btn">Отправить</button>
+          </form>
+        </div>
       </div>
     </div>
     <!-- Main start -->
@@ -493,12 +544,14 @@
             </li>
           </ul>
         </div>
+
         <div class="form-wrapper footer-block">
           <form name="user-email-form" class="email-form">
-            <div class="input-wrapper email">
-              <label for="user-email">Подпишитесь на рассылку</label>
-              <input type="email" name="user-email" id="user-email" placeholder="E-mail" />
+            <div class="input-wrapper">
+              <label class="input-label light" for="user-email">Подпишитесь на рассылку</label>
+              <input class="input-text email" type="email" name="user-email" id="user-email" placeholder="E-mail" />
             </div>
+
             <button type="submit" class="btn base-btn">
               <span class="submit-text">Подписаться</span>
               <svg class="icon small-icon icon-send">
