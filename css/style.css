@@ -805,8 +805,39 @@ svg {
   margin-bottom: 30px;
 }
 
-.user-aggrement + .input-label {
-  margin-left: 7px;
+.user-aggrement.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.input-icon.checkbox-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  border: 2px solid var(--font-accent-secodary-color);
+  border-radius: 2px;
+}
+
+.user-aggrement.checkbox + .checkbox-icon .icon-svg {
+  display: none;
+}
+
+.user-aggrement.checkbox:checked + .checkbox-icon .icon-svg {
+  display: block;
 }
 
 .input-wrapper label {
@@ -868,6 +899,7 @@ svg {
 
 .input-label.checkbox {
   margin-bottom: 0;
+  margin-left: 24px;
   text-transform: none;
   font-style: normal;
   font-weight: normal;
@@ -878,6 +910,10 @@ svg {
 .input-text:focus-within {
   outline: transparent;
   border-color: var(--font-accent-color);
+}
+
+.input-text:focus-within + .input-icon .icon-svg {
+  fill: var(--font-accent-color);
 }
 
 .main-user-form .input-text::placeholder {
