@@ -297,7 +297,6 @@ svg {
 }
 
 .close-icon {
-  display: block;
   width: 11px;
   height: 11px;
 }
@@ -306,6 +305,8 @@ svg {
 .close-btn:focus {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   background-color: rgba(0, 0, 0, 0.05);
+
+  fill: var(--font-accent-color);
 }
 
 .p-40 {
@@ -793,6 +794,7 @@ svg {
   margin-right: 12px;
 }
 
+.main-user-form .input-area-wrapper,
 .main-user-form .input-wrapper {
   position: relative;
 }
@@ -803,6 +805,10 @@ svg {
 
 .main-user-form .input-wrapper.user-aggrement {
   margin-bottom: 30px;
+}
+
+.input-area-wrapper input {
+  width: 100%;
 }
 
 .user-aggrement.checkbox {
@@ -830,15 +836,25 @@ svg {
 
   border: 2px solid var(--font-accent-secodary-color);
   border-radius: 2px;
+  overflow: hidden;
 }
 
 .user-aggrement.checkbox + .checkbox-icon .icon-svg {
   opacity: 0;
-  transition: opacity linear cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1), background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user-aggrement.checkbox:checked + .input-icon.checkbox-icon {
+  border: 2px solid var(--font-accent-color);
 }
 
 .user-aggrement.checkbox:checked + .checkbox-icon .icon-svg {
+  width: 16px;
+  height: 16px;
   opacity: 1;
+  fill: var(--font-light-color);
+  background-color: var(--font-accent-color);
 }
 
 .input-wrapper label {
@@ -880,7 +896,7 @@ svg {
   line-height: calc(var(--main-font-size) * 0.875);
   letter-spacing: calc(var(--input-text-font-size) * 0.03);
 
-  transition: border linear cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   border: 1px solid rgba(33, 33, 33, 0.2);
 }
@@ -890,16 +906,31 @@ svg {
 }
 
 .input-icon {
-  display: block;
+  display: flex;
   position: absolute;
-  bottom: 0;
+  top: 50%;
   left: 12px;
+  width: 18px;
+  height: 18px;
+
+  justify-content: center;
+  align-items: center;
   transform: translateY(-50%);
 }
 
-.icon-svg {
-  width: 18px;
-  height: 18px;
+.user-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.phone-icon {
+  width: 13px;
+  height: 13px;
+}
+
+.envelope-icon {
+  width: 15px;
+  height: 12px;
 }
 
 .input-wrapper.user-aggrement {
